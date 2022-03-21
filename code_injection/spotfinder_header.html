@@ -7,6 +7,7 @@
 </script>
 <script src="https://bungeemonkeygmbh.sharepoint.com/sites/cdn/cdn/spotfinder/gmaps_config.js"></script>
 <script src="https://bungeemonkeygmbh.sharepoint.com/sites/cdn/cdn/spotfinder/gmaps_api.js"></script>
+<link href="https://bungeemonkeygmbh.sharepoint.com/sites/cdn/cdn/spotfinder/devStyles.css" rel="stylesheet">
 <script>
     function initMap() {
         new LocatorPlus(GOOGLE_MAPS_CONFIG)
@@ -14,15 +15,15 @@
 </script>
 <script id="locator-result-items-tmpl" type="text/x-handlebars-template">
     {{#each locations}}
-        <li class="location-result" data-location-index="{{index}}">
-            <button class="select-location">
-                <h2 class="name">{{title}}</h2>
-            </button>
-            <div class="address">{{address1}}<br>{{address2}}</div>
-            {{#if travelDistanceText}}
-                <div class="distance">{{travelDistanceText}}</div>
-            {{/if}}
-        </li>
+    <li class="location-result" data-location-index="{{index}}">
+        <button class="select-location">
+            <h2 class="name">{{title}}</h2>
+        </button>
+        <div class="address">{{address1}}<br>{{address2}}</div>
+        {{#if travelDistanceText}}
+        <div class="distance">{{travelDistanceText}}</div>
+        {{/if}}
+    </li>
     {{/each}}
 </script>
 <!-- end section map -->

@@ -233,7 +233,7 @@ html {
 /*Section Google Maps Cloud*/
 #map-container {
     width: 100%;
-    height: 60vh;
+    height: 75vh;
     position: relative;
     box-sizing: border-box;
 }
@@ -390,17 +390,4 @@ html {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-.spotfinder-iw-attr-container img {
-    max-height: 30px;
-    float: left;
-
-}
-.spotfinder-iw-attr-container {
-    height: 38px;
-}
-
-.spotfinder-iw-attr-container {
-    min-width: 100%;
 }

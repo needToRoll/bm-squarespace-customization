@@ -1,0 +1,32 @@
+spotfinder-iw-parent-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.spotfinder-iw-attr-container img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    padding-right: 10px;
+
+}
+
+.spotfinder-iw-attr-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+}
+
+.spotfinder-iw-attr-container {
+    min-width: 100%;
+}
+
+.spotfinder-iw-attr-text {
+    display: flex;
+}
+
+h3.spotfinder-iw-title {
+    font-size: 1.15em !important;
+}

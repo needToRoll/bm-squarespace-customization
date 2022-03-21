@@ -4,6 +4,16 @@
  * Defines an instance of the Locator+ solution, to be instantiated
  * when the Maps library is loaded.
  */
+
+let infoWindowSingleton = null
+function getInfoWindowInstance() {
+    if(infoWindowSingleton == null){
+        infoWindowSingleton = new google.maps.InfoWindow({
+            content: ''
+        });
+    }
+    return infoWindowSingleton
+}
 function LocatorPlus(configuration) {
     const locator = this;
 
@@ -300,16 +310,15 @@ function initializeDistanceMatrix(locator) {
 
 
 function convertLocationToInfoWindow(location) {
-    var infowindow = new google.maps.InfoWindow({
-        content: convertLocationToInfoContentHtmlString(location),
-    });
-    return infowindow
+    const infoWindowInstance = getInfoWindowInstance();
+    infoWindowInstance.setContent(convertLocationToInfoContentHtmlString(location))
+    return infoWindowInstance
 }
 
 function convertLocationToInfoContentHtmlString(location) {
-    var bmIwParentCntainer = document.createElement("div")
+    const bmIwParentCntainer = document.createElement("div")
     bmIwParentCntainer.classList.add("spotfinder-iw-parent-container")
-    var contentString = buildTextPart("h3", location.title, "title").outerHTML
+    let contentString = buildTextPart("h3", location.title, "title").outerHTML
     contentString += buildPartWithIcon(difficultyToText(location.bmSpotInfo.difficulty), "difficulty").outerHTML
     contentString += buildPartWithIcon(location.bmSpotInfo.ropeLength, "ropeLength").outerHTML
     contentString += buildListPart()
@@ -318,18 +327,18 @@ function convertLocationToInfoContentHtmlString(location) {
 }
 
 function buildTextPart(tagName, content, attrName) {
-    var htmlHeadingElement = document.createElement(tagName);
+    let htmlHeadingElement = document.createElement(tagName);
     htmlHeadingElement.classList.add("spotfinder-iw-" + attrName)
     htmlHeadingElement.innerText = content
     return htmlHeadingElement
 }
 
 function buildPartWithIcon(content, attrName) {
-    var attrContainer = document.createElement("div");
+    let attrContainer = document.createElement("div");
     attrContainer.classList.add("spotfinder-iw-attr-container")
-    var iconElement = document.createElement("img");
+    let iconElement = document.createElement("img");
     iconElement.src = cdnSpotfinderBaseUrl + "icon/" + attrName + ".png"
-    var textElement = document.createElement("span")
+    let textElement = document.createElement("span")
     textElement.innerText = content
     textElement.classList.add("spotfinder-iw-attr-text")
     attrContainer.appendChild(iconElement)

@@ -1,0 +1,24 @@
+<script>
+    function findParent(el, clas) {
+        while ((el = el.parentNode) &&
+        el.className.indexOf(clas) < 0) ;
+        return el;
+    };
+
+    function findAndHideParent(child) {
+        parentClass = "sqs-block-code"
+        elementToHide = findParent(child, parentClass)
+        elementToHide.style.height = "0px"
+        elementToHide.style.padding = "0px 0px 0px 0px"
+        elementToHide.style.margin = "0px 0px 0px 0px"
+    }
+
+    var loader = setInterval(function () {
+        if (document.readyState !== "complete") return;
+        clearInterval(loader);
+        document.getElementsByClassName("hide-parent").forEach(findAndHideParent)
+    }, 200);
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBojiHqVA17p_BMMls8trtweQgq0Qx0pvw&callback=initMap&libraries=places,geometry&solution_channel=GMP_QB_locatorplus_v4_cABD"
+        async defer></script>

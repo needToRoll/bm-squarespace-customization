@@ -1,3 +1,7 @@
+// Copyright owned by Bungeemonkey GMBH
+// This file is licensed under CC BY-NC-ND 4.0.
+//  License file available at: https://github.com/needToRoll/bm-squarespace-customization
+
 const GOOGLE_MAPS_CONFIG = {
     "locations": [
         {

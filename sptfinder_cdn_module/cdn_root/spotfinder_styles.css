@@ -1,6 +1,7 @@
 spotfinder-iw-parent-container {
     display: flex;
     flex-direction: row;
+    min-width: 200px;
 }
 
 .spotfinder-iw-attr-container img {

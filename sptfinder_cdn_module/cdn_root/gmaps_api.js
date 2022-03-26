@@ -363,3 +363,4 @@ const difficultyToText = (number) => {
 function buildListPart() {
     return "";
 }
+export {LocatorPlus}
